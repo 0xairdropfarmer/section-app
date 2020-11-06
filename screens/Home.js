@@ -16,13 +16,18 @@ import {
   AdMobRewarded,
   setTestDeviceIDAsync,
 } from "expo-ads-admob";
-
+import * as admobAction from "../redux/actions/admob.action";
+import { useDispatch, useSelector } from "react-redux";
 const Home = () => {
+  const dispatch = useDispatch();
+  const admobReducer = useSelector(({ admobReducer }) => admobReducer);
   React.useEffect(() => {
-    initAdmob().then(() => {
-      // loadInterstitial()
-      // initRewardAds()
-    });
+    if (admobReducer.ad_status) {
+      initAdmob().then(() => {
+        // loadInterstitial()
+        // initRewardAds()
+      });
+    }
   }, []);
   const initAdmob = async () => {
     await setTestDeviceIDAsync("EMULATOR");
