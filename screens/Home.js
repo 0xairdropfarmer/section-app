@@ -51,10 +51,11 @@ const Home = () => {
       <Card
         style={{
           shadowOffset: { width: 5, height: 5 },
-          width: "90%",
+          width: "100%",
           borderRadius: 12,
           alignSelf: "center",
-          marginBottom: 10,
+          alignContent: "center",
+          alignItems:"center"
         }}
       >
         <AdMobBanner
@@ -67,7 +68,7 @@ const Home = () => {
       <Card
         style={{
           shadowOffset: { width: 5, height: 5 },
-          width: "90%",
+          width: "100%",
           borderRadius: 12,
           alignSelf: "center",
           marginBottom: 10,
